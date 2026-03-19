@@ -10,8 +10,12 @@
   <div class="container">
     <h1>Lista de Tarefas</h1>
     <p>Adicione suas tarefas!</p>
-    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    <input type="text" id="inputTarefa" placeholder="Digite a sua tarefa">
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button> <!--chama a função
+    criada no JavaScript. A função está em outro arquivo, para acessar essa função
+    linkamos a pagina script.js ao final do </body>-->
     <p id="mensagem"></p>
+    <ul id="listaTarefas"></ul>
   </div>
 
   <!--Linkando o arquivo script.js(javascrip)
@@ -19,5 +23,8 @@
   processado, pois o navegador irá carregar primeiro 
   a parte visual do site e depois o javascript-->
   <script src="script.js"></script>
+
+  <!--Paramos na Aula 2: Javascript
+    Proxima aula a ser assitida: Aula 03-->
 </body>
 </html>
