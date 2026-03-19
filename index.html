@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página inicial</title>
+  <title>Lista de Tarefas</title>
   <link rel="stylesheet" href="./public/styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Boas vindas!</h1>
-    <p>Vamos personalizar sua saudação usando JavaScript!</p>
-    <div class="saudacao" id="mensagemSaudacao">Olá, visitante!</div>
-    <button onClick="mudarNome()">Personalizar saudação</button>
+    <h1>Lista de Tarefas</h1>
+    <p>Adicione suas tarefas!</p>
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    <p id="mensagem"></p>
   </div>
 
-  
-
+  <!--Linkando o arquivo script.js(javascrip)
+  Coloque sempre ao final do boby, ele vai ser o último a ser 
+  processado, pois o navegador irá carregar primeiro 
+  a parte visual do site e depois o javascript-->
+  <script src="script.js"></script>
 </body>
 </html>
