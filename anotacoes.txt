@@ -1,6 +1,7 @@
 //Criando a função que adiciona tarefas na lista.
 //Essa função só realiza a adição de tarefas na lista, quando o usuário
 //clicar no botão "Adicionar Tarefa" que está na página index.html
+
 function adicionarTarefa() {
 
     // Aqui a gente está criando a variável "inputTarefa" que vai armazenar
@@ -9,17 +10,22 @@ function adicionarTarefa() {
     // do "id" que inserimos logo em seguida entre os parenteses"()"
     // Vale lembrar que aqui ainda não conseguimos buscar o valor que é inserido 
     // dentro desse input 
+    
     let inputTarefa = document.getElementById("inputTarefa")
+    
     // aqui conseguimos pegar o valor, de fato, do que 
     // que fpi inserido dentro do <input>, fizemos isso através do "value", que 
     //que adicionamos logo após de atribuirmos a variável. Esse valor nós armazenamos
     //na variável tarefa. Abaixo.
+   
     let tarefa = inputTarefa.value.trim() //comando "trim()" responsável por tirar os 
                     // espaços em branco, caso o usuário dê espaçõ no input, o sistema
                     // consegue verificar que não há elementos e texto, dessa forma ele
                     // apresentará mensagem de Erro dizendo para o usuário digitar a tarefa. 
                     //Essa verificação está sendo realizada no if e no else.
     
+    const mensagem = document.getElementById("mensagem")
+
 
     //se o valor do input for vazio, então mostre uma mensagem de erro para o usuário
     if (tarefa == "") {
@@ -49,7 +55,7 @@ function adicionarTarefa() {
         // "document.getElementById"
         //Nessa linha estamos buscando o elemento <ul>, por meio do seu id "listatarefas"
         //Nós estamos fazendo essa busca para podermos adicionar os elementos <li></li>
-        let listaTarefas = document.getElementById("listaTarefas")
+        const listaTarefas = document.getElementById("listaTarefas")
         //Aqui nós crimos a variável "novaTarefa", utilizando o elemento
         //"document.createElement" e logo após estamos indicando que vamos colocar
         //o elemento "li" dentro dessa variável, que é a variável "novaTarefa"
@@ -76,4 +82,36 @@ function adicionarTarefa() {
     inputTarefa.value = ""
 
 
+}
+
+************************ ANOTAÇÕES DA PROFESSORA *************************
+************************ MESMO CÓDIGO *************************
+
+function adicionarTarefa() {
+
+    //recebe valor do input do usuário
+    const inputTarefa = document.getElementById("inputTarefa")
+    let tarefa = inputTarefa.value.trim()
+
+    const mensagem = document.getElementById("mensagem")
+
+    // se o valor do input for vazio então mostre uma mensagem de erro para o usuário
+    if (tarefa == "") {
+        //mostre uma mensagem de erro
+        let mensagemErro = "Digite uma tarefa para adicioná-la a sua lista!"
+        mensagem.textContent = mensagemErro
+    } else {
+        //mensagem de tarefa adicionada com sucesso
+        let mensagemSucesso = "Tarefa adicionada com sucesso!"
+        mensagem.textContent = mensagemSucesso
+
+        //cria novo item (li) e insere na (lista ul)
+        const listaTarefas = document.getElementById("listaTarefas")
+        let novaTarefa = document.createElement("li")
+        novaTarefa.textContent = tarefa
+        listaTarefas.appendChild(novaTarefa)
+    }
+
+    //limpa o input do usuário
+    inputTarefa.value = ""
 }
