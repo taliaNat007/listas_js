@@ -1,3 +1,6 @@
+//criando um array 
+let tarefas = []
+
 function adicionarTarefa() {
 
     const inputTarefa = document.getElementById("inputTarefa")   
@@ -13,13 +16,26 @@ function adicionarTarefa() {
         let mensagemSucesso = "Tarefa adicionada com sucesso!"; 
         mensagem.textContent = mensagemSucesso
         mensagem.style.color = "#28A745" 
-
-        const listaTarefas = document.getElementById("listaTarefas")
-        let novaTarefa = document.createElement("li")
-        novaTarefa.textContent = tarefa
-        listaTarefas.appendChild(novaTarefa)
+        //adicionando a tarefa(valor) no array, através do push
+        tarefas.push(tarefa)
+        //chamando função "reenderizarTarefas()"
+        reenderizarTarefas()
     }
 
     inputTarefa.value = ""
+}
 
+//criando nova função  para reenderizar tarefas
+// vamor criar o elemento <li> da nossa lista <ul>
+function reenderizarTarefas() {
+    const listaTarefas = document.getElementById("listaTarefas")
+    listaTarefas.innerHTML = ""
+
+   // let i = 0
+    for(i = 0; i < tarefas.length; i++)
+    {
+        let novaTarefa = document.createElement("li")
+        novaTarefa.textContent = tarefas[i]
+        listaTarefas.appendChild(novaTarefa)
+    }
 }
